@@ -4,6 +4,7 @@ public class Produto {
 	
 	private String nome;
 	private double valor;
+	private int estoque;
 
 	public Produto(String nome, double valor) {
 		this.setNome(nome);
@@ -25,9 +26,18 @@ public class Produto {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-
-	public double getSubtotal() {
-		return 9000.0;
+	
+	public void adicionarEstoque(int quantidade) {
+		this.estoque += quantidade; 
 	}
+	
+	public void removerEstoque(int quantidade) {
+		this.estoque -= quantidade; 
+	}
+
+	public int getEstoque() {
+		return estoque;
+	}
+	
 
 }

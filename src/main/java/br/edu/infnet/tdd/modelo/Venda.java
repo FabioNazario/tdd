@@ -27,11 +27,12 @@ public class Venda {
 			this.setItensVenda(new ArrayList<ItemVenda>());
 		}
 		
-		if(produto == null) return;
+		if(produto == null || quantidade <=0) return;
 		
 		ItemVenda itemVenda = new ItemVenda();
 		itemVenda.setProduto(produto);
 		itemVenda.setQuantidade(quantidade);
+		produto.removerEstoque(quantidade);
 		this.getItensVenda().add(itemVenda);
 	}
 	
